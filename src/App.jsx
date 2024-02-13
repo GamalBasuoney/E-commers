@@ -42,7 +42,7 @@ function App() {
         { path: 'login', element: <Login saveUser={saveUser} /> },
         { path: 'register', element: <Register /> },
         { path: 'cart', element: <ProtectedRoutes><Cart /> </ProtectedRoutes> },
-        { path: 'products', element: <ProtectedRoutes><Products /></ProtectedRoutes> },
+        { path: 'products', element: <Products /> },
         { path: 'products-details/:id', element: <ProtectedRoutes><ProductDetails /></ProtectedRoutes> },
         { path: 'checkout', element: <ProtectedRoutes><Checkout /></ProtectedRoutes> },
         { path: 'allorders', element: <ProtectedRoutes><AllOrders /></ProtectedRoutes> },
@@ -59,17 +59,17 @@ function App() {
     //   </CartContextProvider>
     // </>
     <Provider store={store}>
-    <CheckConnection>
-    <CartContextProvider>
+      <CheckConnection>
+        <CartContextProvider>
 
-      <CounterContextProvider>
-        <Toaster/>
-        <RouterProvider router={routes} />
-      </CounterContextProvider>
+          <CounterContextProvider>
+            <Toaster />
+            <RouterProvider router={routes} />
+          </CounterContextProvider>
 
-    </CartContextProvider>
-</CheckConnection>
-</Provider>
+        </CartContextProvider>
+      </CheckConnection>
+    </Provider>
   );
 }
 

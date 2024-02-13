@@ -12,7 +12,7 @@ export default function FeatureProducts() {
 
   async function getProducts() {
     let { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/products')
-    console.log(data.data);
+    console.log('featche', data.data);
     setAllProducts(data.data)
   }
 
